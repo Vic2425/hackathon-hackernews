@@ -1,40 +1,10 @@
-import React from 'react';
-import {  useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+// import {  useState, useEffect } from "react";
+// import axios from "axios";
 import "../App.css";
-// import ArticlesCards from "./components/ArticleCards";
-import ArticleList from "../components/ArticleList";
 
-function SearchBar() {
-  const [searchResults, setSearchResults] = useState([]);
-  const [query, setQuery] = useState('');
-  const [tags, setTags] = useState('');
-  const [ year, setYear] = useState(0)
-
-  useEffect(
-    () => {
-     const fetchData = async () => {
-        const results = await axios(`https://hn.algolia.com/api/v1/search?query=${query}&tags=${tags}`)
-
-       const object = results.data.hits.filter(result => {
-          if(year === 0) {
-            return result
-          } else
-          if ((Date.now() - year) < Date.parse(result.created_at)) {
-            return result
-          }
-        })
-
-        setSearchResults(object)
-        
-      }
-      fetchData()
-    }, [tags, query, year, searchResults]
-  )
-  const timeFiltered = (e) => {
-    const milliseconds = e.target.value * 24 * 60 * 60 * 1000;
-    setYear(milliseconds)
-  };
+function SearchPage(props) {
+  const { query, setQuery, setTags, timeFiltered } = props;
 
   return (
     <div className="mainCont">
@@ -53,7 +23,9 @@ function SearchBar() {
             autoComplete="off"
             className="searchInput"
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
           />
         </div>
         <span>Settings</span>
@@ -62,7 +34,11 @@ function SearchBar() {
 
       <div className="filtersCont">
         <div className="filterLabel">Search</div>
-        <select onChange={(e) => {setTags(e.target.value)}}>
+        <select
+          onChange={(e) => {
+            setTags(e.target.value);
+          }}
+        >
           <option value="">All</option>
           <option value="story">Stories</option>
           <option value="comment">Comments</option>
@@ -75,21 +51,15 @@ function SearchBar() {
         </select>
 
         <div className="filterLabel">for </div>
-        <select>
-          <option value='0'>All Time</option>
-          <option value='1'>Last 24h</option>
-          <option value='7'>Past Week</option>
-          <option value='30'>Past Month</option>
-          <option value='365'>Past Year</option>
+        <select onChange={timeFiltered}>
+          <option value="0">All Time</option>
+          <option value="365">Last Year</option>
+          <option value="730">Last 2 Years</option>
+          <option value="1095">Last 3 Years</option>
         </select>
-      </div>
-      <div>
-        {searchResults.map((article, index) => (
-          <ArticleList article={article} index={index}/>
-        ))}
       </div>
     </div>
   );
 }
 
-export default SearchBar;
+export default SearchPage;
