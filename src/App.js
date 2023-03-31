@@ -1,12 +1,12 @@
-import './App.css';
-import { React, useState, useEffect } from 'react';
+import "./App.css";
+import React from "react";
+// import SearchBar from "./SearchBar";
+import SearchPage from "./components/SearchPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+        <SearchPage />
     </div>
   );
 }

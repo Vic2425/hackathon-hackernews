@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navBar {
+  position: fixed;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  background-color: #ff742b;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 70px;
+  padding: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.navBar img {
+  height: 50px;
+  margin: 0 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.searchLabel {
+  color: #000;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1;
+  font-weight: 600;
+  text-align: left;
+}
+
+.searchContainer {
+  /* position: relative; */
+  /* display: inline-block; */
+  margin: 0 16px;
+}
+
+.searchInput {
+  border: none;
+  height: 42px;
+  padding: 5px 144px 5px 15px;
+  font-weight: 300;
+  color: rgb(0, 0, 0, 0.75);
+}
+.navBar span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.filtersCont {
+  width: 100%;
+  display: flex;
+  background-color: #f6f6ef;
+  color: #000;
+  font-size: 15px;
+  margin-top: 50px;
+  height: 42px;
+  align-items: center;
+  justify-content: left;
+}
+.filterLabel {
+  margin: 0 5px;
+}
+
+.storyData {
+  margin: 5px 10px;
+}
+
+.storyTitle {
+  width: 100%;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.storyTitle a {
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.storyLink {
+  color: #828282;
+  word-break: break-all;
+}
+
+
+.storyMeta {
+color: #696969;
+font-size: 11px;
+margin-left: 5px;
+}
+
+.spanSep {
+margin: 0 5px;
+color: #696969;
+}
+@media (max-width: 600px) {
+  .navBar {
+    padding-left: 0;
   }
-  to {
-    transform: rotate(360deg);
+  .searchContainer {
+    width: calc(100% - 240px);
+  }
+  .searchLabel {
+    display: none;
   }
 }
