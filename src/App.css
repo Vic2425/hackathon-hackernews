@@ -73,13 +73,14 @@ body {
 }
 
 .storyTitle a {
+  color: #070707;
   text-decoration: none;
   font-size: 16px;
   margin-left: 5px;
 }
 
 .storyLink {
-  color: #828282;
+  color: #c0bdbd;
   word-break: break-all;
 }
 

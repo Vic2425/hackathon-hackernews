@@ -76,11 +76,11 @@ function SearchBar() {
 
         <div className="filterLabel">for </div>
         <select>
-          <option>All Time</option>
-          <option>Last 24h</option>
-          <option>Past Week</option>
-          <option>Past Month</option>
-          <option>Past Year</option>
+          <option value='0'>All Time</option>
+          <option value='1'>Last 24h</option>
+          <option value='7'>Past Week</option>
+          <option value='30'>Past Month</option>
+          <option value='365'>Past Year</option>
         </select>
       </div>
       <div>
