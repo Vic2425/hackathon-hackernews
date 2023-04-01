@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hackathon-hackernews/static/css/main.017f418e.css",
-    "main.js": "/hackathon-hackernews/static/js/main.48c85004.js",
+    "main.css": "/hackathon-hackernews/static/css/main.0566fc7c.css",
+    "main.js": "/hackathon-hackernews/static/js/main.dbc0b18c.js",
     "static/js/787.b4e8e732.chunk.js": "/hackathon-hackernews/static/js/787.b4e8e732.chunk.js",
     "index.html": "/hackathon-hackernews/index.html",
-    "main.017f418e.css.map": "/hackathon-hackernews/static/css/main.017f418e.css.map",
-    "main.48c85004.js.map": "/hackathon-hackernews/static/js/main.48c85004.js.map",
+    "main.0566fc7c.css.map": "/hackathon-hackernews/static/css/main.0566fc7c.css.map",
+    "main.dbc0b18c.js.map": "/hackathon-hackernews/static/js/main.dbc0b18c.js.map",
     "787.b4e8e732.chunk.js.map": "/hackathon-hackernews/static/js/787.b4e8e732.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.017f418e.css",
-    "static/js/main.48c85004.js"
+    "static/css/main.0566fc7c.css",
+    "static/js/main.dbc0b18c.js"
   ]
 }
